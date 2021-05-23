@@ -1,11 +1,15 @@
 
+import Routes from './config/routes.js';
 import './App.css';
+import NavBar from './components/NavBar.js';
 
 function App() {
   return (
-    <div >
-     <h1>Expense Tracker</h1>
-    </div>
+    <>
+    <NavBar/>
+      <Routes />
+      {/* <Footer /> */}
+    </>
   );
 }
 
