@@ -7,7 +7,7 @@ const HomePage = () => {
   const [budgetCard, setBudgetCard] = useState([]);
   useEffect(() => {}, [ budgetCard]);
   const total = budgetCard.reduce(
-    (totalAmount, budget) => totalAmount + parseInt(budget.expense, 10),
+    (totalAmount, budget) => totalAmount + +gbudget.expense,
     0
   );
   return (
