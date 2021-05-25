@@ -78,23 +78,33 @@ const HomePage = () => {
           You Have Exceeded your Budget
         </div>
       )}
-      <div className='budgetCont'>
-        <div className='budgetCard'>
-          <span className='titleName'>Name:</span>
-          <span className='titleExpense'>Expense:</span>
+      <div className='mainCont'>
+        <div className='budgetCont'>
+          <div className='budgetCard'>
+            <span className='titleName'>Item:</span>
+            <span className='titleExpense'>Expense:</span>
+          </div>
         </div>
-      
-      </div>
-      {budgetCard &&
-        budgetCard.map((budget, index) => {
-          return <InfoCard budget={budget} key={index} />;
-        })}
+        <br />
+        <div className='itemCont'>
+          {budgetCard &&
+            budgetCard.map((budget, index) => {
+              return (
+                <InfoCard
+                  budget={budget}
+                  key={budget._id}
+                  index={index}
+                  setRefresh={setRefresh}
+                />
+              );
+            })}
+        </div>
 
-      <div className='budgetCont'>
-        <div className='budgetCard'>
-          <span>Total:</span>
-          <span>{total}</span>
-          
+        <div className='budgetCont totalCont'>
+          <div className='budgetCard'>
+            <span>Total:</span>
+            <span>{total}</span>
+          </div>
         </div>
       </div>
     </>
