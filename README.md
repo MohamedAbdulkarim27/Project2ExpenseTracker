@@ -14,15 +14,15 @@ Stay Budgeting Stay Saving!
 
 ## Wireframe & UserStories
 
- ![] (./Images/WireFrame1) 
- ![] (./Images/WireFrame2)
+ ![] (./Images/WireFrame1.png) 
+ ![] (./Images/WireFrame2.png)
 
- ![] (./Images/TrelloExpenseTracker)
+ ![] (./Images/TrelloExpenseTracker.png)
 
 ## Application 
 
-![] (./Images/HomePage)
-![] (./Images/LoginPage)
+![] (./Images/HomePage.png)
+![] (./Images/LoginPage.png)
 
 ## Installations: Locally
 
