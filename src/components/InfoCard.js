@@ -1,5 +1,5 @@
 import EditForm from "./forms/EditForm"
-const InfoCard = ({ budget }) => {
+const InfoCard = ({ budget, setRefresh, index }) => {
   const obj = { userId: localStorage.getItem('userId') };
   const toggleEditForm = () => {
     document.getElementById(`budgetCard${budget._id}`).style.display = 'none';

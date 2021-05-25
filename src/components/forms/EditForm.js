@@ -46,7 +46,7 @@ const EditForm = ({ budget, setRefresh }) => {
 
   return (
     <div
-      id={editForm$`{budget._id}`}
+      id={'editForm${budget._id}'}
       style={{ display: 'none' }}
       className='card-footer'
     >
