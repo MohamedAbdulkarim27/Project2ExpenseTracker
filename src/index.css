@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+}
+.title {
+  text-align: center;
+  color: antiquewhite;
+  text-shadow: 10px white;
+}
+#root {
+  height: 100vh;
+  background-color: rgb(28, 4, 102);
+  box-sizing: border-box;
+}
+/* ================================== pie Chart  ====================== */
+.pieChart {
+  position: relative;
+  left: 35%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: conic-gradient(pink 70deg, lightblue 0 235deg, orange 0);
+}
+
+.pieChart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================================== HomePage Budget Container ====================== */
+.mainCont {
+  background-color: aliceblue;
+  margin: 20px auto;
+  height: 61vh;
+  width: 97%;
+  border-top: solid black 2px;
+  border-radius: 25px 25px 0px 0px;
+  box-sizing: border-box;
+  box-shadow: 20px aqua;
+  position: relative;
+}
+.budgetCont {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.budgetCard {
+  width: 70vw;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+  
+  /* ============================= Item Container ============================== */
+.itemCont {
+  margin-top: 10px;
+  overflow: scroll;
+  min-height: 45vh;
+  max-height: 45vh;
+  padding: 10px;
+}
+
+  /* ==========================Total Container =============================== */
+.totalCont {
+  position: absolute;
+  bottom: 0px;
+  left: auto;
+  right: auto;
+}
+
+  .titleName,
+  .titleExpense {
+    font-size: 30px;
+  }
+  /* ================================== CreatePage ======================================== */
+  
+  .btnCont {
+    text-align: center;
+  }
+
+  /* ==================================TailWInd CSS By Mohamed Abdullah================ */
+/* https://dev.to/cooljasonmelton/build-this-cool-sign-in-form-with-react-and-css-10of */
+.cfb {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Container {
+  position: relative;
+  top: 12em;
+  left: 25%;
+  width: 50%;
+  box-shadow: 1px 2px 2px #d4a734;
+  border: 0.1em solid #d4a734;
+  border-radius: 0.5em;
+}
+.banner-side {
+  position: absolute;
+  z-index: 2;
+  right: 50%;
+
+  border: 0.1em solid #d4a734;
+  border-radius: 0.5em;
+
+  width: 50%;
+  height: 100%;
+
+  flex-direction: column;
+
+  background-color: #035e7b;
+  opacity: 1;
+
+  color: #eefcf8;
+  text-align: center;
+
+  transition: 2s;
+}
+.form-side {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+
+  border: 0.1em solid #d4a734;
+  border-radius: 0.5em;
+
+  width: 50%;
+  height: 100%;
+
+  background-color: #eefcf8;
+  opacity: 1;
+
+   font-weight: bold; 
+  color: #08789d;
+
+  transition: 2s;
+}
+.send-right {
+  right: 0;
+}
+
+.send-left {
+  right: 40%;
+}
+.landing-form {
+  background-color: #204875;
+  padding: 1em;
+}
+
+
+
+
+/* https://dev.to/cooljasonmelton/build-this-cool-sign-in-form-with-react-and-css-10of */
+@media only screen and (max-width: 1280px) {
+  .cfb {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Container {
+    position: relative;
+    top: 12em;
+    left: 0;
+    width: 100%;
+    box-shadow: 1px 2px 2px #d4a734;
+    border: 0.1em solid #d4a734;
+    border-radius: 0.5em;
+  }
+  .banner-side {
+    position: absolute;
+    z-index: 2;
+    right: 50%;
+
+    border: 0.1em solid #d4a734;
+    border-radius: 0.5em;
+
+    width: 50%;
+    height: 100%;
+
+    flex-direction: column;
+
+    background-color: #035e7b;
+    opacity: 1;
+    color: #eefcf8;
+    text-align: center;
+    transition: 2s;
+  }
+  .form-side {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+
+    border: 0.1em solid #d4a734;
+    border-radius: 0.5em;
+
+    width: 50%;
+    height: 100%;
+
+    background-color: #eefcf8;
+    opacity: 1;
+
+    color: #08789d;
+
+    transition: 2s;
+  }
+}

@@ -1,6 +1,6 @@
 
 import Routes from './config/routes.js';
-import './App.css';
+import './index.css';
 import NavBar from './components/NavBar.js';
 
 function App() {
