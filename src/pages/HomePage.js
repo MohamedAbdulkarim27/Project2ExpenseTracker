@@ -49,6 +49,35 @@ const HomePage = () => {
       </div>
       <CreateForm budgetCard={budgetCard} setRefresh ={setRefresh} setBudgetCard={setBudgetCard} />
       <div className = 'pieChart'></div>
+      <div className='card-footer'>
+        <div className='input-group mb-3'>
+          <input
+            id='budgetAmount'
+            name='amount'
+            className='form-control type_msg'
+            type='text'
+            placeholder='Whats your Budget?'
+            value={budgetAmount.amount}
+            onChange={handleBudgetAmountChange}
+          />
+          <span
+            type='submit'
+            onClick={handleBudgetAmountSubmit}
+            className='input-group-text send_btn'
+          >
+            <i className='fas fa-plus-circle'></i>
+          </span>
+        </div>
+        <span className='text-white'>
+          Your Budget Amount is: {budgetAmount.setAmount}
+        </span>
+      </div>
+      {total > +budgetAmount.setAmount && (
+        <div className='alert alert-danger' role='alert'>
+          {' '}
+          You Have Exceeded your Budget
+        </div>
+      )}
       <div className='budgetCont'>
         <div className='budgetCard'>
           <span className='titleName'>Name:</span>
