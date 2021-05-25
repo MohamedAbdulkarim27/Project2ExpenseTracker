@@ -1,11 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import CreatePage from "../pages/CreatePage";
+import CreateForm from "../components/forms/CreateForm";
 import InfoCard from "../components/InfoCard";
 
 
 const HomePage = () => {
+  const obj = { userId: localStorage.getItem('userId') };
+  const [refresh, setRefresh] = useState(null);
   const [budgetCard, setBudgetCard] = useState([]);
-  useEffect(() => {}, [ budgetCard]);
+  const [budgetAmount, setBudgetAmount] = useState({
+    amount: '0',
+    setAmount: '0',
+  });
+  useEffect(() => {
+    fetch('https://young-shelf-82889.herokuapp.com/budget/index', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setBudgetCard(data);
+      })
+      .catch((err) => console.log(err));
+  }, [refresh]);
   const total = budgetCard.reduce(
     (totalAmount, budget) => totalAmount + +budget.expense,
     0
@@ -15,12 +35,13 @@ const HomePage = () => {
       <div className='title'>
         <span>Budget Your Spending</span>
       </div>
-      <CreatePage budgetCard={budgetCard} setBudgetCard={setBudgetCard} />
+      <CreateForm budgetCard={budgetCard} setBudgetCard={setBudgetCard} />
       <div className='budgetCont'>
         <div className='budgetCard'>
           <span className='titleName'>Name:</span>
           <span className='titleExpense'>Expense:</span>
         </div>
+      
       </div>
       {budgetCard &&
         budgetCard.map((budget, index) => {
