@@ -1,5 +1,6 @@
-import EditForm from "./forms/EditForm"
-const InfoCard = ({ budget, setRefresh, index }) => {
+import EditForm from './forms/EditForm';
+
+const InfoCard = ({ index, budget, setRefresh }) => {
   const obj = { userId: localStorage.getItem('userId') };
   const toggleEditForm = () => {
     document.getElementById(`budgetCard${budget._id}`).style.display = 'none';
@@ -21,7 +22,6 @@ const InfoCard = ({ budget, setRefresh, index }) => {
       })
       .catch((err) => console.log(err));
   }
-  
   return (
     <>
       <div className='budgetCont'>

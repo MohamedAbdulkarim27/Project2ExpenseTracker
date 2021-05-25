@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import CreateForm from "../components/forms/CreateForm";
-import InfoCard from "../components/InfoCard";
 
+import InfoCard from '../components/InfoCard';
+import CreateForm from '../components/forms/CreateForm';
 
 const HomePage = () => {
   const obj = { userId: localStorage.getItem('userId') };
@@ -11,7 +11,12 @@ const HomePage = () => {
     amount: '0',
     setAmount: '0',
   });
-  const total = budgetCard.reduce((totalAmount, budget) => totalAmount + +budget.expense,0);
+
+  const total = budgetCard.reduce(
+    (totalAmount, budget) => totalAmount + +budget.expense,
+    0
+  );
+
   useEffect(() => {
     fetch('https://young-shelf-82889.herokuapp.com/budget/index', {
       method: 'POST',
@@ -27,6 +32,7 @@ const HomePage = () => {
       })
       .catch((err) => console.log(err));
   }, [refresh]);
+
   const handleBudgetAmountChange = (event) => {
     event.persist();
     setBudgetAmount(() => ({
@@ -45,10 +51,14 @@ const HomePage = () => {
   return (
     <>
       <div className='title'>
-        <span className = 'spanTitle'>Budget Your Spending</span>
+        <span className='spanTitle'>Budget Your Spending</span>
       </div>
-      <CreateForm budgetCard={budgetCard} setRefresh ={setRefresh} setBudgetCard={setBudgetCard} />
-      <div className = 'pieChart'></div>
+      <CreateForm
+        budgetCard={budgetCard}
+        setBudgetCard={setBudgetCard}
+        setRefresh={setRefresh}
+      />
+      <div className='pieChart'></div>
       <div className='card-footer'>
         <div className='input-group mb-3'>
           <input
