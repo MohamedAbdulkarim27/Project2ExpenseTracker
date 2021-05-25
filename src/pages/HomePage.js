@@ -11,6 +11,7 @@ const HomePage = () => {
     amount: '0',
     setAmount: '0',
   });
+  const total = budgetCard.reduce((totalAmount, budget) => totalAmount + +budget.expense,0);
   useEffect(() => {
     fetch('https://young-shelf-82889.herokuapp.com/budget/index', {
       method: 'POST',
@@ -26,16 +27,28 @@ const HomePage = () => {
       })
       .catch((err) => console.log(err));
   }, [refresh]);
-  const total = budgetCard.reduce(
-    (totalAmount, budget) => totalAmount + +budget.expense,
-    0
-  );
+  const handleBudgetAmountChange = (event) => {
+    event.persist();
+    setBudgetAmount(() => ({
+      ...budgetAmount,
+      [event.target.name]: event.target.value,
+    }));
+  };
+  const handleBudgetAmountSubmit = (event) => {
+    event.preventDefault();
+
+    setBudgetAmount({
+      setAmount: budgetAmount.amount,
+      amount: '0',
+    });
+  };
   return (
     <>
       <div className='title'>
-        <span>Budget Your Spending</span>
+        <span className = 'spanTitle'>Budget Your Spending</span>
       </div>
-      <CreateForm budgetCard={budgetCard} setBudgetCard={setBudgetCard} />
+      <CreateForm budgetCard={budgetCard} setRefresh ={setRefresh} setBudgetCard={setBudgetCard} />
+      <div className = 'pieChart'></div>
       <div className='budgetCont'>
         <div className='budgetCard'>
           <span className='titleName'>Name:</span>
